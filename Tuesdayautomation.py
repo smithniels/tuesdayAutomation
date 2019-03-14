@@ -1,5 +1,5 @@
 '''
-This file will open & run SQL reports copying the output.
+This file will open & run SQL reports copying the outputs.
 Login into a gmail account and open blank Google spreadsheets. 
 Format the google spread sheets (freeszing the top row, setting the title, and locking privacy settings)
 Paste the data copied
@@ -11,7 +11,8 @@ The program needs to be scheduled using the chrontabs module
 Notes:
 This file currently uses pyautogui to work with Sheets. The gspread module would work better, but I'm still learning 
 how to use API's, so for the time being pyautogui works.
-
+The final step here is to send out these reports, but until I get everything where I need it to be I'm holding back from
+    including that code, so I don't inundate folks with accidental emails.
 '''
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
