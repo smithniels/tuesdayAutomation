@@ -14,7 +14,7 @@ how to use API's, so for the time being pyautogui works.
 The final step here is to send out these reports, but until I get everything where I need it to be I'm holding back from
     including that code, so I don't inundate folks with accidental emails.
 Because it's using pyautogui to count pixels, varying monitor sizes means that this code will need to be adjusted to work for some people
-    I've put in python code for find the x,y coordinates of the mouse in this repository.
+    I've put in python code for find the x,y coordinates of the mouse in this repository. [whereMouse.py]
 '''
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
