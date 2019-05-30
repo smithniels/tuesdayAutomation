@@ -9,6 +9,7 @@ The functions being called here need to be broken down and rearranged to expedit
 The program needs to be scheduled using the chrontabs module
 
 Notes:
+There are a FIVE VARAIBALES fields that need to be assigned below before this is run.
 This file currently uses pyautogui to work with Sheets. The gspread module would work better, but I'm still learning 
 how to use API's, so for the time being pyautogui works.
 The final step here is to send out these reports, but until I get everything where I need it to be I'm holding back from
@@ -23,19 +24,20 @@ import ctypes
 import subprocess
 import pyautogui
 
-gmail = ''          #password to gmail account
-email2 = ''         #email address of gmail account
-sqlpw   = ''        #password to SQL server
-sql2  = '0.0.0.0'   #
-sql3  = 'nsmith'    #login for SQL server
+#FIVE VARIABLES
+gmail  = ''            #password to gmail account
+email2 = ''            #email address of gmail account
+sqlpw  = ''            #password to SQL server
+sql2   = '0.0.0.0'     #
+sql3   = ''            #login for SQL server
 
 
 def googleFormat():
     
-            #x, y = pyautogui.position()
-            #positionStr = 'X: ' + str(x).rjust(4) + ' Y: ' + str(y).rjust(4)
-            #print(positionStr, end='')
-            #print('\b' * len(positionStr), end='', flush=True)
+        # x, y = pyautogui.position()
+        # positionStr = 'X: ' + str(x).rjust(4) + ' Y: ' + str(y).rjust(4)
+        # print(positionStr, end='')
+        # print('\b' * len(positionStr), end='', flush=True)
         time.sleep(3)
         pyautogui.moveTo(x = 533, y = 157)
         time.sleep(.2)
