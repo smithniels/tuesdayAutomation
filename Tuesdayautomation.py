@@ -30,6 +30,8 @@ email2 = ''            #email address of gmail account
 sqlpw  = ''            #password to SQL server
 sql2   = '0.0.0.0'     #
 sql3   = ''            #login for SQL server
+script = 'C:\\'        # path to SQL file to be run
+path = r''             #path to sql.exe file
 
 
 def googleFormat():
@@ -66,9 +68,6 @@ def googleFormat():
 
 
 ############ OPEN and RUN SQL 
-script = 'C:\\Users\\nsmith\\Desktop\\Tuesday.sql' 
-
-path = r'' #path to sql.exe file
 
 subprocess.Popen("%s %s" % (path, script))
 
