@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-
+When run, this script finds the x,y cordinates of the mouse on the screen,
+and returns the output every second. Press Ctrl+C to hop out of the program.
 @author: NSmith
 """
 
