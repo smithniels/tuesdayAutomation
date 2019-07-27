@@ -1,21 +1,22 @@
 '''
 This file will open & run SQL reports copying the outputs.
-Login into a gmail account and open blank Google spreadsheets. 
+Login into a gmail account and open blank Google spreadsheets.
 Format the google spread sheets (freeszing the top row, setting the title, and locking privacy settings)
-Paste the data copied
+Paste the copied data
 
-ToDo:
-The functions being called here need to be broken down and rearranged to expedite the run time
-The program needs to be scheduled using the chrontabs module
+TODO: The functions being called here need to be broken down and rearranged to expedite the run time
+TODO: The program needs to be scheduled using the chrontabs module
 
 Notes:
-There are a FIVE VARAIBALES fields that need to be assigned below before this is run.
-This file currently uses pyautogui to work with Sheets. The gspread module would work better, but I'm still learning 
-how to use API's, so for the time being pyautogui works.
-The final step here is to send out these reports, but until I get everything where I need it to be I'm holding back from
-    including that code, so I don't inundate folks with accidental emails.
-Because it's using pyautogui to count pixels, varying monitor sizes means that this code will need to be adjusted to work for some people
-    I've put in python code for find the x,y coordinates of the mouse in this repo. [whereMouse.py]
+    There are SEVEN VARAIBALES fields that need to be assigned below before this is run.
+    This file currently uses pyautogui to work with Sheets. The gspread module would work better, but I'm still learning
+    how to use API's, so for the time being pyautogui works.
+    The final step here is to send out these reports, but until I get everything where I need it to be I'm holding back from
+        including that code, so I don't inundate folks with accidental emails.
+    Because it's using pyautogui to count pixels, varying monitor sizes means that this code will need to be adjusted to work for some people
+        I've put in python code for find the x,y coordinates of the mouse in this repo. [whereMouse.py]
+
+
 '''
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -24,7 +25,7 @@ import ctypes
 import subprocess
 import pyautogui
 
-#FIVE VARIABLES
+#SEVEN VARIABLES
 gmail  = ''            #password to gmail account
 email2 = ''            #email address of gmail account
 sqlpw  = ''            #password to SQL server
@@ -35,7 +36,7 @@ path = r''             #path to sql.exe file
 
 
 def googleFormat():
-    
+
         # x, y = pyautogui.position()
         # positionStr = 'X: ' + str(x).rjust(4) + ' Y: ' + str(y).rjust(4)
         # print(positionStr, end='')
@@ -67,14 +68,14 @@ def googleFormat():
         return print('done')
 
 
-############ OPEN and RUN SQL 
+############ OPEN and RUN SQL
 
 subprocess.Popen("%s %s" % (path, script))
 
 time.sleep(10)
 
 i = 0
-while i < 3:    
+while i < 3:
     pyautogui.press('tab')
     i += 1
 time.sleep(1)
@@ -84,10 +85,9 @@ time.sleep(1)
 
 pyautogui.press('f5')
 
-#10.235.1.240    
+#10.235.1.240
 ############ OPEN and RUN ChromePress Ctrl-C to quit.
-
-browser = webdriver.Chrome()
+browser = webdriver.Chrome(r'C:\Users\19258\Desktop\chromedriver.exe')
 browser.get('https://docs.google.com/spreadsheets/u/0/')
 action = webdriver.ActionChains(browser)
 
@@ -102,13 +102,10 @@ emailElem1.send_keys(Keys.RETURN)
 
 time.sleep(1)
 
-### TO-DO - Go to SQL Copy data 
+### TO-DO - Go to SQL Copy data
 
 ### TO-DO - Share sheets with people
 
 browser.get('https://docs.google.com/spreadsheets/create')
 browser.maximize_window()
 googleFormat()
-
-
-
